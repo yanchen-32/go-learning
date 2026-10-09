@@ -1,17 +1,18 @@
 # Week 2 / 01：slice、map、interface 与 JSON
 
-本目录先提供四个彼此独立、可以直接运行的小案例，再保留一个不含答案的综合练习区。
+本目录包含四道主题练习的完整答案、测试和可运行示例，以及订单统计器综合练习及其测试。
 
 ## 目录说明
 
 | 路径 | 内容 |
 | --- | --- |
-| `examples/slice/main.go` | slice 的创建、追加、遍历、筛选、复制和删除。 |
-| `examples/map/main.go` | map 的创建、写入、comma-ok 查询、删除和稳定输出。 |
-| `examples/interface/main.go` | interface 的隐式实现、不同实现和 pointer receiver。 |
-| `examples/json/main.go` | JSON tag、解码、业务校验和编码。 |
+| `examples/slice/` | 播放列表：添加、删除、查找、总时长、时长筛选及边界测试。 |
+| `examples/map/` | 库存索引：重复 SKU 校验、查询、增减库存、删除、总库存与低库存查询。 |
+| `examples/interface/` | 通知服务：小接口、控制台与内存实现、发送业务函数及测试。 |
+| `examples/json/` | 配置解析器：JSON tag、环境与端口校验、编解码及测试。 |
 | `STUDY_NOTES.md` | 2026-10-08 的 interface 与 JSON 学习总结。 |
-| `practice/README.md` | 综合盲写题目；练习代码和测试由学习者自行创建。 |
+| `practice/` | 订单统计器题目、实现、测试及可运行入口。 |
+| `EXERCISE_NOTES.md` | 练习约定、设计说明与十二项验收问题的回答。 |
 
 ## 运行案例
 
@@ -22,6 +23,7 @@ go run ./examples/slice
 go run ./examples/map
 go run ./examples/interface
 go run ./examples/json
+go run ./practice
 ```
 
 统一检查：
@@ -32,4 +34,6 @@ go test ./...
 go vet ./...
 ```
 
-建议依次阅读和运行四个案例，确认能解释每一处语法后，再打开 `practice/README.md` 开始综合练习。
+建议依次阅读和运行 `examples/` 中的四个案例，再阅读 `practice/` 的综合实现及测试。独立复习时可以先根据题目重写，再用测试验收。
+
+每个主题的答案在对应目录的 `main.go`，测试在 `main_test.go`。例如只检查播放列表：`go test ./examples/slice`。
